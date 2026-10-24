@@ -1,0 +1,19 @@
+# Залежності
+node_modules
+
+# Змінні оточення (ВСІ файли .env)
+.env
+.env.*
+!.env.example
+test.env
+
+# Next.js
+.next
+out
+build
+
+# Інше
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json

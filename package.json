@@ -1,0 +1,24 @@
+{
+  "name": "thesis_topic_generator_payload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+    "scripts": {
+    "dev": "concurrently -n cms,front \"npm run dev --prefix cms\" \"npm run dev --prefix frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dykyiyurii1-eng/thesis_topic_generator_payload.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dykyiyurii1-eng/thesis_topic_generator_payload/issues"
+  },
+  "homepage": "https://github.com/dykyiyurii1-eng/thesis_topic_generator_payload#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}

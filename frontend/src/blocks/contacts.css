@@ -1,0 +1,4 @@
+.contacts { display: grid; gap: 8px; justify-items: start; padding: 48px 32px; margin-block: 64px; border-radius: 24px; background: var(--color-dark); color: var(--color-on-dark); }
+.contacts .section-title { color: inherit; }
+.contacts__link { color: inherit; font-size: clamp(1.3rem, 3vw, 1.8rem); font-weight: 600; text-decoration: none; }
+.contacts__address { margin: 8px 0 0; opacity: 0.75; }
