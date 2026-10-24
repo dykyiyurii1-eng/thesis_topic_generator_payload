@@ -1,5 +1,4 @@
 export type BlockType = 'hero' | 'features' | 'contacts'
-
 export type ButtonVariant = 'primary' | 'secondary' | 'outline'
 
 export type ImageData = { src: string; alt: string }
