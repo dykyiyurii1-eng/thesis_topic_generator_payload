@@ -1,6 +1,6 @@
 export function footer({ siteName, footer }) {
     const year = new Date().getFullYear();
-    const footerText = footer?.text ?? '';
+     const footerText = footer ?? '';
 
     return `
         <footer class="footer">
