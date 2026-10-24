@@ -3,9 +3,12 @@ import { getSettings, getPage, ApiError } from './api'
 import { renderBlocks } from './renderBlocks'
 import { footer } from './layout/footer'
 import { header } from './layout/header'
+import { restoreTheme, initInteractions } from './interactions'
 import './styles/theme.css'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
+
+restoreTheme()
 
 function renderLoading(): void {
   app.innerHTML = `<div class="state" role="status">&gt; ЗАВАНТАЖЕННЯ...</div>`
@@ -46,6 +49,8 @@ async function start(): Promise<void> {
       <main>${renderBlocks(page.blocks)}</main>
       ${footer(setting)}
     `
+
+    initInteractions()
   } catch (error) {
     console.error(error)
     renderError(error)

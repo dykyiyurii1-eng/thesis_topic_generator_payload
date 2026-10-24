@@ -8,7 +8,9 @@ export function header({ siteName, menu = [] }: SiteSettings): string {
   return `
     <header class="header">
       <a class="header__logo" href="/">${siteName ?? 'Сайт'}</a>
-      <nav class="header__nav">${menuHtml}</nav>
+      <button class="header__toggle" id="menu-toggle" aria-label="Меню" aria-expanded="false">[ МЕНЮ ]</button>
+      <nav class="header__nav" id="menu">${menuHtml}</nav>
+      <button class="header__theme" id="theme-toggle" aria-label="Змінити тему">[ ◐ ]</button>
     </header>
   `
 }
