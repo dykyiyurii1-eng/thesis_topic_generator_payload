@@ -211,6 +211,17 @@ export interface Page {
             blockName?: string | null;
             blockType: 'features';
           }
+        | {
+            anchor?: string | null;
+            title: string;
+            phone?: string | null;
+            email: string;
+            github?: string | null;
+            address?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'contacts';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -377,6 +388,18 @@ export interface PagesSelect<T extends boolean = true> {
                     text?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        contacts?:
+          | T
+          | {
+              anchor?: T;
+              title?: T;
+              phone?: T;
+              email?: T;
+              github?: T;
+              address?: T;
               id?: T;
               blockName?: T;
             };
