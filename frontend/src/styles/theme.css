@@ -178,3 +178,5 @@ html.invert { filter: invert(1); background: #fff; }
 .contacts__title { margin: 0 0 16px; color: #fff; }
 .contacts__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .contacts__list a { text-decoration: underline; }
+.header { position: sticky; top: 0; z-index: 100; background: #fff; }
+html { scroll-padding-top: 90px; }
