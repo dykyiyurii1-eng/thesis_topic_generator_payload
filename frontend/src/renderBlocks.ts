@@ -2,12 +2,12 @@ import { hero } from './blocks/hero'
 import { features } from './blocks/features'
 import { contacts } from './blocks/contacts'
 import type { Block, BlockType } from './types'
-
+import { feedback } from './blocks/feedback'
 type Renderers = {
   [K in BlockType]: (block: Extract<Block, { type: K }>) => string
 }
 
-const renderers: Renderers = { hero, features, contacts }
+const renderers: Renderers = { hero, features, contacts, feedback }
 
 export function renderBlocks(blocks: Block[]): string {
   return blocks

@@ -1,4 +1,4 @@
-import type { PageResponse, SiteSettings } from './types'
+import type { PageResponse, SiteSettings, MessagePayload } from './types'
 
 const API_URL: string = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 
@@ -24,4 +24,14 @@ export function getSettings(): Promise<SiteSettings> {
 
 export function getPage(path: string): Promise<PageResponse> {
   return getJson<PageResponse>(`/api/page?path=${encodeURIComponent(path)}`)
+}
+export async function sendMessage(data: MessagePayload): Promise<void> {
+  const res = await fetch(`${API_URL}/api/messages`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+  if (!res.ok) {
+    throw new ApiError(`HTTP status ${res.status}`, res.status)
+  }
 }

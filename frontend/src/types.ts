@@ -1,4 +1,4 @@
-export type BlockType = 'hero' | 'features' | 'contacts'
+export type BlockType = 'hero' | 'features' | 'contacts'| 'feedback'
 export type ButtonVariant = 'primary' | 'secondary' | 'outline'
 
 export type ImageData = { src: string; alt: string }
@@ -31,8 +31,15 @@ export type ContactsBlock = BaseBlock & {
   github?: string
   address?: string
 }
+export type FeedbackBlock = BaseBlock & {
+  type: 'feedback'
+  title: string
+  description?: string
+  submitLabel?: string
+}
 
-export type Block = HeroBlock | FeaturesBlock | ContactsBlock
+export type MessagePayload = { name: string; email: string; message: string }
+export type Block = HeroBlock | FeaturesBlock | ContactsBlock | FeedbackBlock
 
 export type PageResponse = { path: string; title: string; blocks: Block[] }
 export type SiteSettings = { siteName: string; menu: MenuItem[]; footer: string }
