@@ -13,7 +13,7 @@ export type HeroBlock = BaseBlock & {
   badge?: string
   title: string
   subtitle: string
-  image: ImageData
+  image?: ImageData
   buttons?: HeroButton[]
 }
 
