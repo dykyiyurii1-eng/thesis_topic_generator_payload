@@ -15,11 +15,16 @@ import { Common } from './globals/Common'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-
-const FRONTEND_URLS = (process.env.FRONTEND_URL || 'http://localhost:5173')
-  .split(',')
-  .map((url) => url.trim())
-  .filter(Boolean)
+const allowedOrigins: string[] = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'http://localhost:8000',
+  'http://127.0.0.1:8000',
+  ...(process.env.FRONTEND_URL || '')
+    .split(',')
+    .map((url) => url.trim())
+    .filter(Boolean),
+]
 
 export default buildConfig({
   admin: {
@@ -36,8 +41,8 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  cors: FRONTEND_URLS,
-  csrf: FRONTEND_URLS,
+  cors: allowedOrigins,
+  csrf: allowedOrigins,
   serverURL: process.env.CMS_URL || 'http://localhost:3000',
   db: postgresAdapter({
     pool: {
