@@ -2,7 +2,7 @@ import './hero.css'
 import type { HeroBlock } from '../types'
 import { esc, safeUrl } from '../utils'
 
-export function hero({ anchor, badge, title, subtitle, image, buttons = [] }: HeroBlock): string {
+export function hero({ anchor, badge, title, subtitle, buttons = [] }: HeroBlock): string {
   return `
     <section class="hero" id="${esc(anchor ?? 'home')}">
       <div class="hero__content">
@@ -15,7 +15,11 @@ export function hero({ anchor, badge, title, subtitle, image, buttons = [] }: He
           `).join('')}
         </div>
       </div>
-      ${image ? `<img class="hero__image" src="${esc(image.src)}" alt="${esc(image.alt)}">` : ''}
+      <img
+        class="hero__image"
+        src="/hero-ai-debate.jpg"
+        alt="Ілюстрація штучного інтелекту та генерації тем"
+      >
     </section>
   `
 }

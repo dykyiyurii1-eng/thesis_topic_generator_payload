@@ -46,7 +46,9 @@ export const pageEndpoint: Endpoint = {
             where: {
                 path: { equals: path },
             },
-            depth:2,    
+            // Hero uses a static frontend image, so Media records do not need
+            // to be fetched when serving public page data.
+            depth: 0,
             limit: 1,
         })
 
